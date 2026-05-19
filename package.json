@@ -1,0 +1,25 @@
+{
+  "name": "iums-result-notifier",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node checker.js",
+    "dev": "node debugSelectors.js",
+    "pm2:start": "pm2 start checker.js --name iums-bot",
+    "pm2:stop": "pm2 stop iums-bot",
+    "pm2:restart": "pm2 restart iums-bot",
+    "pm2:logs": "pm2 logs iums-bot",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "node-cron": "^4.2.1",
+    "nodemailer": "^8.0.7",
+    "playwright": "^1.60.0"
+  }
+}

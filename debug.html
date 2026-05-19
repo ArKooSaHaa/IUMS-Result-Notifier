@@ -1,0 +1,813 @@
+<!DOCTYPE html><html lang="en" ng-app="UMS" class="ng-scope"><head><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+    <title>IUMS</title>
+    <link rel="icon" href="../resources/images/branding.jpg" type="image/gif" sizes="16x16">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="cache-control" content="max-age=0">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT">
+    <meta http-equiv="pragma" content="no-cache">
+
+    <!-- Loading core css-->
+    <link rel="stylesheet" href="vendors/jquery-ui-1.10.4.custom/css/ui-lightness/jquery-ui-1.10.4.custom.min.css">
+    <link rel="stylesheet" href="vendors/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="vendors/bootstrap/css/bootstrap.min.css">
+    <!-- Loading style vendors-->
+    <link type="text/css" rel="stylesheet" href="vendors/animate.css/animate.css">
+    <link type="text/css" rel="stylesheet" href="vendors/jquery-pace/pace.css">
+    <link type="text/css" rel="stylesheet" href="vendors/jquery-notify/css/jquery.notify.css">
+    <link type="text/css" rel="stylesheet" href="vendors/jquery-notific8/jquery.notific8.min.css">
+    <link type="text/css" rel="stylesheet" href="vendors/bootstrap-daterangepicker/daterangepicker-bs3.css">
+    <link type="text/css" rel="stylesheet" href="vendors/bootstrap-timepicker/css/bootstrap-timepicker.css">
+    <link type="text/css" rel="stylesheet" href="vendors/calendar/zabuto_calendar.min.css">
+    <link type="text/css" rel="stylesheet" href="vendors/angular-scrollable-table/scrollable-table.css">
+    <link type="text/css" rel="stylesheet" href="js/lib/toogle-switch/angular-toggle-switch.css">
+    <link type="text/css" rel="stylesheet" href="js/lib/toogle-switch/angular-toggle-switch-bootstrap.css">
+
+
+
+    <!-- Loading template style-->
+
+    <!--<link rel="stylesheet" data-ng-href="css/themes/style1/orange-blue.css"/>-->
+    <link rel="stylesheet" data-ng-href="css/themes/style1/orange-blue.css" href="css/themes/style1/orange-blue.css">
+    <link rel="stylesheet" href="css/style-responsive.css">
+    <link rel="stylesheet" data-ng-href="css/custom.css" href="css/custom.css">
+    <!--link rel="stylesheet" href="css/angular-filemanager.min.css"/-->
+    <link rel="stylesheet" data-ng-href="vendors/jquery-jqgrid-5.0.2/css/ui.jqgrid-bootstrap.css" href="vendors/jquery-jqgrid-5.0.2/css/ui.jqgrid-bootstrap.css">
+    <link rel="stylesheet" data-ng-href="vendors/bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css" href="vendors/bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css">
+
+    <!-- Firebase Library-->
+    <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase-messaging.js"></script>
+    <script src="../resources/js/fcm.js"></script>
+    <script src="../resources/js/fcmEndpoint.js"></script>
+
+    <!-- Loading library javascript-->
+    <script src="vendors/jquery-1.10.2.min.js"></script>
+    <script src="vendors/jquery-validate/jquery.validate.min.js"></script>
+
+    <script src="js/lib/angular.js"></script>
+    <script src="js/lib/angular-animate.js"></script>
+    <script src="js/lib/angular-material.js"></script>
+    <script src="js/lib/angular-route.js"></script>
+    <script src="js/lib/angular-ui-router.js"></script>
+    <script src="js/lib/angular-local-storage.js"></script>
+    <script src="js/lib/angular-cookies.min.js"></script>
+    <script src="js/lib/angular-sanitize.min.js"></script>
+    <script src="js/lib/ocLazyLoad.js"></script>
+    <script src="js/lib/ui-bootstrap-tpls-0.11.0.js"></script>
+    <script src="js/lib/URI-1.13.1.min.js"></script>
+    <script src="js/lib/ng-file-upload.min.js"></script>
+    <script src="js/lib/angular-messages.min.js"></script>
+
+    <script src="js/lib/accounting/accounting.js"></script>
+    <script src="js/lib/accounting/angular-accounting.js"></script>
+    <script src="js/lib/toogle-switch/angular-toggle-switch.js"></script>
+
+    <script src="js/lib/text-truncate.js"></script>
+
+    <!--
+        <script src="js/lib/angular-filemanager.min.js"></script>
+    -->
+    <!--script src="js/lib/angular-filemanager/app.js"></script>
+    <script src="js/lib/angular-filemanager/directives/directives.js"></script>
+    <script src="js/lib/angular-filemanager/filters/filters.js"></script>
+    <script src="js/lib/angular-filemanager/providers/config.js"></script>
+    <script src="js/lib/angular-filemanager/entities/chmod.js"></script>
+    <script src="js/lib/angular-filemanager/entities/item.js"></script>
+    <script src="js/lib/angular-filemanager/services/apihandler.js"></script>
+    <script src="js/lib/angular-filemanager/services/apimiddleware.js"></script>
+    <script src="js/lib/angular-filemanager/services/filenavigator.js"></script>
+    <script src="js/lib/angular-filemanager/providers/translations.js"></script>
+    <script src="js/lib/angular-filemanager/controllers/main.js"></script>
+    <script src="js/lib/angular-filemanager/controllers/selector-controller.js"></script-->
+
+    <link rel="stylesheet" href="js/lib/hands-on-table/handsontable.full.css">
+    <link rel="stylesheet" href="js/lib/clockpicker/bootstrap-clockpicker.css">
+    <script src="js/lib/hands-on-table/handsontable.full.min.js"></script>
+    <script src="js/lib/clockpicker/bootstrap-clockpicker.js"></script>
+    <script src="js/lib/hands-on-table/ngHandsontable.js"></script>
+    <script src="js/lib/pagination/dirPagination.js"></script>
+    <!--script src="js/lib/angular-translate.min.js"></script-->
+
+    <script src="vendors/smart-table/smart-table.min.js"></script>
+    <script src="vendors/jquery-migrate-1.2.1.min.js"></script>
+    <script src="vendors/jquery-ui.js"></script>
+    <script src="vendors/select2/select2.js"></script>
+    <script src="vendors/angular-ui-grid/select.js"></script>
+    <script src="vendors/bootstrap-timepicker/js/bootstrap-timepicker.js"></script>
+    <link type="text/css" rel="stylesheet" href="vendors/angular-ui-grid/select.css">
+    <!-- Loading global plugin-->
+    <script src="vendors/bootstrap/js/bootstrap.min.js"></script>
+    <script src="vendors/bootstrap-hover-dropdown/bootstrap-hover-dropdown.js"></script>
+    <script src="vendors/metisMenu/jquery.metisMenu.js"></script>
+    <script src="vendors/slimScroll/jquery.slimscroll.js"></script>
+    <script src="vendors/jquery-cookie/jquery.cookie.js"></script>
+    <script src="vendors/jquery-notify/jquery.notify.js"></script><style type="text/css" id="notify-bootstrap">.notifyjs-bootstrap-base {
+	font-weight: bold;
+	padding: 8px 15px 8px 14px;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+	background-color: #fcf8e3;
+	border: 1px solid #fbeed5;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	white-space: nowrap;
+	padding-left: 25px;
+	background-repeat: no-repeat;
+	background-position: 3px 7px;
+}
+.notifyjs-bootstrap-error {
+	color: #B94A48;
+	background-color: #F2DEDE;
+	border-color: #EED3D7;
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAtRJREFUeNqkVc1u00AQHq+dOD+0poIQfkIjalW0SEGqRMuRnHos3DjwAH0ArlyQeANOOSMeAA5VjyBxKBQhgSpVUKKQNGloFdw4cWw2jtfMOna6JOUArDTazXi/b3dm55socPqQhFka++aHBsI8GsopRJERNFlY88FCEk9Yiwf8RhgRyaHFQpPHCDmZG5oX2ui2yilkcTT1AcDsbYC1NMAyOi7zTX2Agx7A9luAl88BauiiQ/cJaZQfIpAlngDcvZZMrl8vFPK5+XktrWlx3/ehZ5r9+t6e+WVnp1pxnNIjgBe4/6dAysQc8dsmHwPcW9C0h3fW1hans1ltwJhy0GxK7XZbUlMp5Ww2eyan6+ft/f2FAqXGK4CvQk5HueFz7D6GOZtIrK+srupdx1GRBBqNBtzc2AiMr7nPplRdKhb1q6q6zjFhrklEFOUutoQ50xcX86ZlqaZpQrfbBdu2R6/G19zX6XSgh6RX5ubyHCM8nqSID6ICrGiZjGYYxojEsiw4PDwMSL5VKsC8Yf4VRYFzMzMaxwjlJSlCyAQ9l0CW44PBADzXhe7xMdi9HtTrdYjFYkDQL0cn4Xdq2/EAE+InCnvADTf2eah4Sx9vExQjkqXT6aAERICMewd/UAp/IeYANM2joxt+q5VI+ieq2i0Wg3l6DNzHwTERPgo1ko7XBXj3vdlsT2F+UuhIhYkp7u7CarkcrFOCtR3H5JiwbAIeImjT/YQKKBtGjRFCU5IUgFRe7fF4cCNVIPMYo3VKqxwjyNAXNepuopyqnld602qVsfRpEkkz+GFL1wPj6ySXBpJtWVa5xlhpcyhBNwpZHmtX8AGgfIExo0ZpzkWVTBGiXCSEaHh62/PoR0p/vHaczxXGnj4bSo+G78lELU80h1uogBwWLf5YlsPmgDEd4M236xjm+8nm4IuE/9u+/PH2JXZfbwz4zw1WbO+SQPpXfwG/BBgAhCNZiSb/pOQAAAAASUVORK5CYII=);
+}
+.notifyjs-bootstrap-success {
+	color: #468847;
+	background-color: #DFF0D8;
+	border-color: #D6E9C6;
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAutJREFUeNq0lctPE0Ecx38zu/RFS1EryqtgJFA08YCiMZIAQQ4eRG8eDGdPJiYeTIwHTfwPiAcvXIwXLwoXPaDxkWgQ6islKlJLSQWLUraPLTv7Gme32zoF9KSTfLO7v53vZ3d/M7/fIth+IO6INt2jjoA7bjHCJoAlzCRw59YwHYjBnfMPqAKWQYKjGkfCJqAF0xwZjipQtA3MxeSG87VhOOYegVrUCy7UZM9S6TLIdAamySTclZdYhFhRHloGYg7mgZv1Zzztvgud7V1tbQ2twYA34LJmF4p5dXF1KTufnE+SxeJtuCZNsLDCQU0+RyKTF27Unw101l8e6hns3u0PBalORVVVkcaEKBJDgV3+cGM4tKKmI+ohlIGnygKX00rSBfszz/n2uXv81wd6+rt1orsZCHRdr1Imk2F2Kob3hutSxW8thsd8AXNaln9D7CTfA6O+0UgkMuwVvEFFUbbAcrkcTA8+AtOk8E6KiQiDmMFSDqZItAzEVQviRkdDdaFgPp8HSZKAEAL5Qh7Sq2lIJBJwv2scUqkUnKoZgNhcDKhKg5aH+1IkcouCAdFGAQsuWZYhOjwFHQ96oagWgRoUov1T9kRBEODAwxM2QtEUl+Wp+Ln9VRo6BcMw4ErHRYjH4/B26AlQoQQTRdHWwcd9AH57+UAXddvDD37DmrBBV34WfqiXPl61g+vr6xA9zsGeM9gOdsNXkgpEtTwVvwOklXLKm6+/p5ezwk4B+j6droBs2CsGa/gNs6RIxazl4Tc25mpTgw/apPR1LYlNRFAzgsOxkyXYLIM1V8NMwyAkJSctD1eGVKiq5wWjSPdjmeTkiKvVW4f2YPHWl3GAVq6ymcyCTgovM3FzyRiDe2TaKcEKsLpJvNHjZgPNqEtyi6mZIm4SRFyLMUsONSSdkPeFtY1n0mczoY3BHTLhwPRy9/lzcziCw9ACI+yql0VLzcGAZbYSM5CCSZg1/9oc/nn7+i8N9p/8An4JMADxhH+xHfuiKwAAAABJRU5ErkJggg==);
+}
+.notifyjs-bootstrap-info {
+	color: #3A87AD;
+	background-color: #D9EDF7;
+	border-color: #BCE8F1;
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QYFAhkSsdes/QAAA8dJREFUOMvVlGtMW2UYx//POaWHXg6lLaW0ypAtw1UCgbniNOLcVOLmAjHZolOYlxmTGXVZdAnRfXQm+7SoU4mXaOaiZsEpC9FkiQs6Z6bdCnNYruM6KNBw6YWewzl9z+sHImEWv+vz7XmT95f/+3/+7wP814v+efDOV3/SoX3lHAA+6ODeUFfMfjOWMADgdk+eEKz0pF7aQdMAcOKLLjrcVMVX3xdWN29/GhYP7SvnP0cWfS8caSkfHZsPE9Fgnt02JNutQ0QYHB2dDz9/pKX8QjjuO9xUxd/66HdxTeCHZ3rojQObGQBcuNjfplkD3b19Y/6MrimSaKgSMmpGU5WevmE/swa6Oy73tQHA0Rdr2Mmv/6A1n9w9suQ7097Z9lM4FlTgTDrzZTu4StXVfpiI48rVcUDM5cmEksrFnHxfpTtU/3BFQzCQF/2bYVoNbH7zmItbSoMj40JSzmMyX5qDvriA7QdrIIpA+3cdsMpu0nXI8cV0MtKXCPZev+gCEM1S2NHPvWfP/hL+7FSr3+0p5RBEyhEN5JCKYr8XnASMT0xBNyzQGQeI8fjsGD39RMPk7se2bd5ZtTyoFYXftF6y37gx7NeUtJJOTFlAHDZLDuILU3j3+H5oOrD3yWbIztugaAzgnBKJuBLpGfQrS8wO4FZgV+c1IxaLgWVU0tMLEETCos4xMzEIv9cJXQcyagIwigDGwJgOAtHAwAhisQUjy0ORGERiELgG4iakkzo4MYAxcM5hAMi1WWG1yYCJIcMUaBkVRLdGeSU2995TLWzcUAzONJ7J6FBVBYIggMzmFbvdBV44Corg8vjhzC+EJEl8U1kJtgYrhCzgc/vvTwXKSib1paRFVRVORDAJAsw5FuTaJEhWM2SHB3mOAlhkNxwuLzeJsGwqWzf5TFNdKgtY5qHp6ZFf67Y/sAVadCaVY5YACDDb3Oi4NIjLnWMw2QthCBIsVhsUTU9tvXsjeq9+X1d75/KEs4LNOfcdf/+HthMnvwxOD0wmHaXr7ZItn2wuH2SnBzbZAbPJwpPx+VQuzcm7dgRCB57a1uBzUDRL4bfnI0RE0eaXd9W89mpjqHZnUI5Hh2l2dkZZUhOqpi2qSmpOmZ64Tuu9qlz/SEXo6MEHa3wOip46F1n7633eekV8ds8Wxjn37Wl63VVa+ej5oeEZ/82ZBETJjpJ1Rbij2D3Z/1trXUvLsblCK0XfOx0SX2kMsn9dX+d+7Kf6h8o4AIykuffjT8L20LU+w4AZd5VvEPY+XpWqLV327HR7DzXuDnD8r+ovkBehJ8i+y8YAAAAASUVORK5CYII=);
+}
+.notifyjs-bootstrap-warn {
+	color: #C09853;
+	background-color: #FCF8E3;
+	border-color: #FBEED5;
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAMAAAC6V+0/AAABJlBMVEXr6eb/2oD/wi7/xjr/0mP/ykf/tQD/vBj/3o7/uQ//vyL/twebhgD/4pzX1K3z8e349vK6tHCilCWbiQymn0jGworr6dXQza3HxcKkn1vWvV/5uRfk4dXZ1bD18+/52YebiAmyr5S9mhCzrWq5t6ufjRH54aLs0oS+qD751XqPhAybhwXsujG3sm+Zk0PTwG6Shg+PhhObhwOPgQL4zV2nlyrf27uLfgCPhRHu7OmLgAafkyiWkD3l49ibiAfTs0C+lgCniwD4sgDJxqOilzDWowWFfAH08uebig6qpFHBvH/aw26FfQTQzsvy8OyEfz20r3jAvaKbhgG9q0nc2LbZxXanoUu/u5WSggCtp1anpJKdmFz/zlX/1nGJiYmuq5Dx7+sAAADoPUZSAAAAAXRSTlMAQObYZgAAAAFiS0dEAIgFHUgAAAAJcEhZcwAACxMAAAsTAQCanBgAAAAHdElNRQfdBgUBGhh4aah5AAAAlklEQVQY02NgoBIIE8EUcwn1FkIXM1Tj5dDUQhPU502Mi7XXQxGz5uVIjGOJUUUW81HnYEyMi2HVcUOICQZzMMYmxrEyMylJwgUt5BljWRLjmJm4pI1hYp5SQLGYxDgmLnZOVxuooClIDKgXKMbN5ggV1ACLJcaBxNgcoiGCBiZwdWxOETBDrTyEFey0jYJ4eHjMGWgEAIpRFRCUt08qAAAAAElFTkSuQmCC);
+}
+</style>
+    <script src="vendors/jquery-notific8/jquery.notific8.min.js"></script>
+    <script src="vendors/holder/holder.js"></script>
+    <script src="vendors/responsive-tabs/responsive-tabs.js"></script>
+    <script src="vendors/jquery-news-ticker/jquery.newsTicker.min.js"></script>
+    <script src="vendors/moment/moment.js"></script>
+    <script src="vendors/flot-chart/jquery.flot.js"></script>
+    <script src="vendors/DataTables/media/js/jquery.dataTables.js"></script>
+    <script src="vendors/angular-scrollable-table/angular-scrollable-table.js"></script>
+    <script src="vendors/jquery-jqgrid-5.0.2/js/i18n/grid.locale-en.js"></script>
+    <script src="vendors/jquery-jqgrid-5.0.2/js/jquery.jqGrid.min.js"></script>
+    <script src="vendors/jquery-jqgrid-5.0.2/defaultSettings.js"></script>
+    <script src="vendors/bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="vendors/ui-sortable/sortable.js"></script>
+	<script src="vendors/jquery-key/jquery.key.js"></script>
+
+    <!-- Loading core javascript-->
+    <script src="js/main.js?v=2"></script>
+
+    <!-- Javascript functions for whom we don't need any two-way bindings [Added by Ifti ]-->
+    <script src="js/common.js"></script>
+    <!--Load script for each page using LazyLoad-->
+
+    <!--Device Detector-->
+    <script src="js/lib/device-detector/re-tree.min.js"></script>
+    <script src="js/lib/device-detector/ua-device-detector.min.js"></script>
+    <script src="js/lib/device-detector/ng-device-detector.min.js"></script>
+
+
+    <!--JQX-->
+    <script src="js/lib/jqx/jqxcore.js"></script>
+    <script src="js/lib/jqx/jqxangular.js"></script>
+    <script src="../resources/js/FileSaver.min.js"></script>
+    <script src="../resources/js/angular-filter.js"></script>
+
+    <!--Angular UI Exporting Library-->
+    <script src="js/common.js"></script>
+    <script src="vendors/angular-ui-grid/ui-grid.min.js"></script>
+    <link rel="stylesheet" href="vendors/angular-ui-grid/ui-grid.min.css">
+    <script src="vendors/angular-ui-grid/select.js"></script>
+    <link type="text/css" rel="stylesheet" href="vendors/angular-ui-grid/select.css">
+    <script src="js/lib/csv/csv.js"></script>
+    <script src="js/lib/pdfmake/pdfmake.js"></script>
+    <script src="js/lib/pdfmake/vfs_fonts.js"></script>
+    <script src="js/lib/jszip/jszip.min.js"></script>
+
+
+
+    <script src="https://scripts.sandbox.bka.sh/versions/1.2.0-beta/checkout/bKash-checkout-sandbox.js"></script><link type="text/css" rel="stylesheet" href="vendors/bootstrap-datepicker/css/datepicker.css"><script src="vendors/bootstrap-datepicker/js/bootstrap-datepicker.js" async=""></script>
+<style type="text/css" id="core-notify">.notifyjs-corner {
+	position: fixed;
+	margin: 5px;
+	z-index: 1050;
+}
+
+.notifyjs-corner .notifyjs-wrapper,
+.notifyjs-corner .notifyjs-container {
+	position: relative;
+	display: block;
+	height: inherit;
+	width: inherit;
+	margin: 3px;
+}
+
+.notifyjs-wrapper {
+	z-index: 1;
+	position: absolute;
+	display: inline-block;
+	height: 0;
+	width: 0;
+}
+
+.notifyjs-container {
+	display: none;
+	z-index: 1;
+	position: absolute;
+}
+
+.notifyjs-hidable {
+	cursor: pointer;
+}
+
+[data-notify-text],[data-notify-html] {
+	position: relative;
+}
+
+.notifyjs-arrow {
+	position: absolute;
+	z-index: 2;
+	width: 0;
+	height: 0;
+}</style><style id="holderjs-style" type="text/css"></style></head>
+<body ng-controller="AppController" ng-class="[header.menu_style, header.menu_collapse, header.header_topbar, header.effect]" class="animated ng-scope sidebar-colors" style="">
+<div ng-class="header.boxed" class="default-page"><a id="totop" href="/#/"><i class="fa fa-angle-up"></i></a>
+    <!-- ngInclude: 'templates/states/header.html' --><div id="header-topbar-option-demo" ng-include="'templates/states/header.html'" onload="load_header()" class="page-header-topbar ng-scope">
+<nav id="topbar" role="navigation" style="margin-bottom: 0;" data-step="1" data-intro="&lt;b&gt;Topbar&lt;/b&gt; has other styles with live demo. Go to &lt;b&gt;Layouts-&gt;Header&amp;Topbar&lt;/b&gt; and check it out." class="navbar navbar-default navbar-static-top ng-scope">
+  <div class="navbar-header">
+    <button type="button" data-toggle="collapse" data-target=".sidebar-collapse" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a id="logo" href="#/home" class="navbar-brand"><span class="fa fa-rocket"></span><span class="logo-text">IUMS</span><span style="display: none" class="logo-text-icon">҉</span></a>
+  </div>
+  <div class="topbar-main"><a id="menu-toggle" href="javascript:void(0);" ng-click="header.collapse('k')" class="hidden-xs"><i class="fa fa-bars"></i></a>
+    <ul ng-class="header.layout_horizontal_menu" class="nav navbar-nav">
+    </ul>
+    <ul class="nav navbar navbar-top-links navbar-right mbn">
+      <li><a href="#/home" class="dropdown-toggle"><span>Home</span></a>
+        <!--      <li><a href="#/home" class="dropdown-toggle"><i class="fa fa-home"></i><span class="badge badge-orange"></span></a>-->
+        <ul class="dropdown-menu dropdown-messages">
+          <li>
+            <p></p>
+          </li>
+          <li>
+            <div class="dropdown-slimscroll">
+              <ul>
+              </ul>
+            </div>
+          </li>
+          <li class="last"><a href="javascript:void(0);"></a></li>
+        </ul>
+      </li>
+      <li><span style="color: #4c5967; font-size: 20px;">|</span></li>
+      <li class="dropdown" data-notification="" data-toggle="tooltip" title="Notifications"><a data-hover="dropdown" href="javascript:void(0);" class="dropdown-toggle" data-ng-click="setReadStatus()" aria-haspopup="true" aria-expanded="false"><i class="fa fa-bell fa-fw"></i><!-- ngIf: numOfUnreadNotification > 0 --></a>
+<ul class="dropdown-menu dropdown-alerts">
+    <li>
+        <!-- ngIf: numOfUnreadNotification > 0 -->
+
+        <!-- ngIf: !numOfUnreadNotification --><p data-ng-if="!numOfUnreadNotification" class="ng-scope">You have no new notifications</p><!-- end ngIf: !numOfUnreadNotification -->
+    </li>
+    <li>
+        <div class="dropdown-slimscroll" style="max-height: 500px; overflow-y: auto;">
+            <ul>
+                <!-- ngRepeat: notification in notifications -->
+            </ul>
+        </div>
+    </li>
+</ul></li>
+      <li class="dropdown" data-toggle="tooltip" title="Emails"><a data-hover="dropdown" href="javascript:void(0);" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false"><i class="fa fa-envelope fa-fw"></i><span class="badge badge-orange"></span></a>
+        <ul class="dropdown-menu dropdown-messages">
+          <li>
+            <p></p>
+          </li>
+          <li>
+            <div class="dropdown-slimscroll">
+              <ul>
+              </ul>
+            </div>
+          </li>
+          <li class="last"><a href="javascript:void(0);"></a></li>
+        </ul>
+      </li>
+      <li data-toggle="tooltip" title="Log out"><a href="#/logout" ui-sref="logout"><i class="fa fa-sign-out"></i></a></li>
+      <li><span style="color: #4c5967; font-size: 20px;">|</span></li>
+      <!--<li class="dropdown"><a data-hover="dropdown" href="javascript:void(0);" class="dropdown-toggle"><i class="fa fa-tasks fa-fw"></i><span class="badge badge-yellow"></span></a>-->
+      <!--<ul class="dropdown-menu dropdown-tasks">-->
+      <!--<li>-->
+      <!--<p></p>-->
+      <!--</li>setReadStatus()-->
+      <!--<li>-->
+      <!--<div class="dropdown-slimscroll">-->
+      <!--<ul>-->
+      <!--</ul>-->
+      <!--</div>-->
+      <!--</li>-->
+      <!--<li class="last"><a href="javascript:void(0);"></a></li>-->
+      <!--</ul>-->
+      <!--</li>-->
+      <li class="dropdown topbar-user"><a data-hover="dropdown" href="javascript:void(0);" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+        <img src="data:image/jpeg;base64,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" data-profile-picture="" alt="" class="img-responsive img-circle ng-isolate-scope">
+        &nbsp;<span class="hidden-xs ng-binding"></span>&nbsp;<span class="caret"></span></a>
+        <ul class="dropdown-menu dropdown-user pull-right">
+          <li>
+            <div>
+              <div class="media"><div class="pull-left" style="padding:10px">
+                <img src="data:image/jpeg;base64,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" data-profile-picture="" alt="" class="toolbarBigProfileImg ng-isolate-scope">
+              </div>
+                <div class="media-body">
+                  <h6 class="media-heading" style="font-weight:bold;padding-top:10px;"><span id="userName">ARKO SAHA</span></h6>
+                  <span id="userDesignation" style="font-size:13px;">Student</span>
+                </div>
+              </div>
+            </div>
+            <div id="empProfile" style="text-align:center;width:220px;">
+              <a href="#/studentProfile" style="font-weight:bold;color:#0073b1" id="profileAnchor">View profile</a>
+            </div>
+          </li>
+          <li class="divider"></li>
+          <!--<li><a href="#/home"><i class="fa fa-user"></i>User Home</a></li>-->
+          <li><a href="#/changePassword"><i class="fa fa-pencil"></i>Change Password</a></li>
+          <li><a href="#/userGuide"><i class="fa fa-book"></i>User Guide</a></li>
+          <li class="divider"></li>
+          <li><a href="#/logout" ui-sref="logout"><i class="fa fa-key"></i>Log Out</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<script type="text/javascript" class="ng-scope">
+    $("#userName").html(localStorage.getItem("userFullName"));
+    $("#userDesignation").html(localStorage.getItem("userDesignation"));
+    if(localStorage.getItem("userDesignation") == "Student") {
+        $("#profileAnchor").attr("href", "#/studentProfile");
+    }
+</script></div>
+    <div id="wrapper" ng-class="header.layout_menu">
+        <nav id="sidebar" role="navigation" data-step="3" data-intro="Template has &lt;b&gt;many navigation styles&lt;/b&gt;" data-position="right" data-ng-menu="" class="navbar-default navbar-static-side"><style>
+    .newFeature{
+        background-size: 40px 40px;
+        background-repeat: no-repeat;
+        background-image: url("new.jpg");
+        background-position: right;
+    }
+</style>
+
+<div class="sidebar-collapse menu-scroll collapse">
+    <!-- ngIf: isMenuLoading -->
+    <ul id="side-menu" class="nav admin-nav-main">
+        <li class="user-panel">
+            <div class="clearfix"></div>
+        </li>
+
+        <!-- ngRepeat: entry in menuEntries[0].items --><!-- ngIf: menuEntries.length == 1 --><li data-ng-repeat="entry in menuEntries[0].items" data-ng-mouseleave="_menu.mouseleave()" data-ng-mouseover="_menu.mouseover(entry.viewOrder)" data-ng-class="entry.title=='Clearance/Improvement' ? '_menu.hover[entry.viewOrder] newFeature': '_menu.hover[entry.viewOrder]'" data-ng-if="menuEntries.length == 1" data-ng-style="env=='d' &amp;&amp; devIndicator" class="ng-scope _menu.hover[entry.viewOrder]" style="">
+            <!-- ngIf: entry.location!='' --><a href="#/userHome" data-ng-if="entry.location!=''" data-ui-sref="userHome" ui-sref-opts="{reload: true, notify: true}" data-ng-click="_menu.collapse(entry.viewOrder)" index="1" data-ng-init="_menu.status[entry.viewOrder]=true" class="ng-scope">
+                <i class="fa fa fa-home fa-fw ng-scope"><div class="icon-bg bg-blue"></div></i><span class="menu-title ng-scope">User Home</span><span class="fa arrow ng-scope"></span>
+            </a><!-- end ngIf: entry.location!='' -->
+            <!-- ngIf: entry.location=='' -->
+            <!-- ngIf: entry.children.length > 0 -->
+        </li><!-- end ngIf: menuEntries.length == 1 --><!-- end ngRepeat: entry in menuEntries[0].items --><!-- ngIf: menuEntries.length == 1 --><li data-ng-repeat="entry in menuEntries[0].items" data-ng-mouseleave="_menu.mouseleave()" data-ng-mouseover="_menu.mouseover(entry.viewOrder)" data-ng-class="entry.title=='Clearance/Improvement' ? '_menu.hover[entry.viewOrder] newFeature': '_menu.hover[entry.viewOrder]'" data-ng-if="menuEntries.length == 1" data-ng-style="env=='d' &amp;&amp; devIndicator" class="ng-scope _menu.hover[entry.viewOrder]">
+            <!-- ngIf: entry.location!='' --><a href="#/studentProfile" data-ng-if="entry.location!=''" data-ui-sref="studentProfile" ui-sref-opts="{reload: true, notify: true}" data-ng-click="_menu.collapse(entry.viewOrder)" index="15" data-ng-init="_menu.status[entry.viewOrder]=true" class="ng-scope">
+                <i class="fa fa fa-user fa-fw ng-scope"><div class="icon-bg bg-blue"></div></i><span class="menu-title ng-scope">Student Profile</span><span class="fa arrow ng-scope"></span>
+            </a><!-- end ngIf: entry.location!='' -->
+            <!-- ngIf: entry.location=='' -->
+            <!-- ngIf: entry.children.length > 0 -->
+        </li><!-- end ngIf: menuEntries.length == 1 --><!-- end ngRepeat: entry in menuEntries[0].items --><!-- ngIf: menuEntries.length == 1 --><li data-ng-repeat="entry in menuEntries[0].items" data-ng-mouseleave="_menu.mouseleave()" data-ng-mouseover="_menu.mouseover(entry.viewOrder)" data-ng-class="entry.title=='Clearance/Improvement' ? '_menu.hover[entry.viewOrder] newFeature': '_menu.hover[entry.viewOrder]'" data-ng-if="menuEntries.length == 1" data-ng-style="env=='d' &amp;&amp; devIndicator" class="ng-scope _menu.hover[entry.viewOrder]">
+            <!-- ngIf: entry.location!='' --><a href="#/gradeSheet" data-ng-if="entry.location!=''" data-ui-sref="gradeSheet" ui-sref-opts="{reload: true, notify: true}" data-ng-click="_menu.collapse(entry.viewOrder)" index="16" data-ng-init="_menu.status[entry.viewOrder]=true" class="ng-scope">
+                <i class="fa fa-file-text-o fa-fw ng-scope"><div class="icon-bg bg-blue"></div></i><span class="menu-title ng-scope">Result</span><span class="fa arrow ng-scope"></span>
+            </a><!-- end ngIf: entry.location!='' -->
+            <!-- ngIf: entry.location=='' -->
+            <!-- ngIf: entry.children.length > 0 -->
+        </li><!-- end ngIf: menuEntries.length == 1 --><!-- end ngRepeat: entry in menuEntries[0].items --><!-- ngIf: menuEntries.length == 1 --><li data-ng-repeat="entry in menuEntries[0].items" data-ng-mouseleave="_menu.mouseleave()" data-ng-mouseover="_menu.mouseover(entry.viewOrder)" data-ng-class="entry.title=='Clearance/Improvement' ? '_menu.hover[entry.viewOrder] newFeature': '_menu.hover[entry.viewOrder]'" data-ng-if="menuEntries.length == 1" data-ng-style="env=='d' &amp;&amp; devIndicator" class="ng-scope _menu.hover[entry.viewOrder]">
+            <!-- ngIf: entry.location!='' --><a href="#/changeRequestPanel" data-ng-if="entry.location!=''" data-ui-sref="changeRequestPanel" ui-sref-opts="{reload: true, notify: true}" data-ng-click="_menu.collapse(entry.viewOrder)" index="16" data-ng-init="_menu.status[entry.viewOrder]=true" class="ng-scope">
+                <i class="fa fa fa-cogs fa-fw ng-scope"><div class="icon-bg bg-blue"></div></i><span class="menu-title ng-scope">Name &amp; Other Correction</span><span class="fa arrow ng-scope"></span>
+            </a><!-- end ngIf: entry.location!='' -->
+            <!-- ngIf: entry.location=='' -->
+            <!-- ngIf: entry.children.length > 0 -->
+        </li><!-- end ngIf: menuEntries.length == 1 --><!-- end ngRepeat: entry in menuEntries[0].items --><!-- ngIf: menuEntries.length == 1 --><li data-ng-repeat="entry in menuEntries[0].items" data-ng-mouseleave="_menu.mouseleave()" data-ng-mouseover="_menu.mouseover(entry.viewOrder)" data-ng-class="entry.title=='Clearance/Improvement' ? '_menu.hover[entry.viewOrder] newFeature': '_menu.hover[entry.viewOrder]'" data-ng-if="menuEntries.length == 1" data-ng-style="env=='d' &amp;&amp; devIndicator" class="ng-scope _menu.hover[entry.viewOrder]">
+            <!-- ngIf: entry.location!='' --><a href="#/examRoutineStudent" data-ng-if="entry.location!=''" data-ui-sref="examRoutineStudent" ui-sref-opts="{reload: true, notify: true}" data-ng-click="_menu.collapse(entry.viewOrder)" index="16" data-ng-init="_menu.status[entry.viewOrder]=true" class="ng-scope">
+                <i class="fa fa fa-registered fa-fw ng-scope"><div class="icon-bg bg-orange"></div></i><span class="menu-title ng-scope">Exam Routine</span><span class="fa arrow ng-scope"></span>
+            </a><!-- end ngIf: entry.location!='' -->
+            <!-- ngIf: entry.location=='' -->
+            <!-- ngIf: entry.children.length > 0 -->
+        </li><!-- end ngIf: menuEntries.length == 1 --><!-- end ngRepeat: entry in menuEntries[0].items --><!-- ngIf: menuEntries.length == 1 --><li data-ng-repeat="entry in menuEntries[0].items" data-ng-mouseleave="_menu.mouseleave()" data-ng-mouseover="_menu.mouseover(entry.viewOrder)" data-ng-class="entry.title=='Clearance/Improvement' ? '_menu.hover[entry.viewOrder] newFeature': '_menu.hover[entry.viewOrder]'" data-ng-if="menuEntries.length == 1" data-ng-style="env=='d' &amp;&amp; devIndicator" class="ng-scope _menu.hover[entry.viewOrder]">
+            <!-- ngIf: entry.location!='' --><a href="#/studentPaymentHistory" data-ng-if="entry.location!=''" data-ui-sref="paymentHistory" ui-sref-opts="{reload: true, notify: true}" data-ng-click="_menu.collapse(entry.viewOrder)" index="17" data-ng-init="_menu.status[entry.viewOrder]=true" class="ng-scope">
+                <i class="fa fa fa-money fa-fw ng-scope"><div class="icon-bg bg-blue"></div></i><span class="menu-title ng-scope">Payments</span><span class="fa arrow ng-scope"></span>
+            </a><!-- end ngIf: entry.location!='' -->
+            <!-- ngIf: entry.location=='' -->
+            <!-- ngIf: entry.children.length > 0 -->
+        </li><!-- end ngIf: menuEntries.length == 1 --><!-- end ngRepeat: entry in menuEntries[0].items --><!-- ngIf: menuEntries.length == 1 --><li data-ng-repeat="entry in menuEntries[0].items" data-ng-mouseleave="_menu.mouseleave()" data-ng-mouseover="_menu.mouseover(entry.viewOrder)" data-ng-class="entry.title=='Clearance/Improvement' ? '_menu.hover[entry.viewOrder] newFeature': '_menu.hover[entry.viewOrder]'" data-ng-if="menuEntries.length == 1" data-ng-style="env=='d' &amp;&amp; devIndicator" class="ng-scope _menu.hover[entry.viewOrder]">
+            <!-- ngIf: entry.location!='' --><a href="#/semesterFee" data-ng-if="entry.location!=''" data-ui-sref="semesterFee" ui-sref-opts="{reload: true, notify: true}" data-ng-click="_menu.collapse(entry.viewOrder)" index="17" data-ng-init="_menu.status[entry.viewOrder]=true" class="ng-scope">
+                <i class="fa fa-files-o fa-fw ng-scope"><div class="icon-bg bg-blue"></div></i><span class="menu-title ng-scope">Semester fee</span><span class="fa arrow ng-scope"></span>
+            </a><!-- end ngIf: entry.location!='' -->
+            <!-- ngIf: entry.location=='' -->
+            <!-- ngIf: entry.children.length > 0 -->
+        </li><!-- end ngIf: menuEntries.length == 1 --><!-- end ngRepeat: entry in menuEntries[0].items --><!-- ngIf: menuEntries.length == 1 --><li data-ng-repeat="entry in menuEntries[0].items" data-ng-mouseleave="_menu.mouseleave()" data-ng-mouseover="_menu.mouseover(entry.viewOrder)" data-ng-class="entry.title=='Clearance/Improvement' ? '_menu.hover[entry.viewOrder] newFeature': '_menu.hover[entry.viewOrder]'" data-ng-if="menuEntries.length == 1" data-ng-style="env=='d' &amp;&amp; devIndicator" class="ng-scope _menu.hover[entry.viewOrder]">
+            <!-- ngIf: entry.location!='' --><a href="#/readmission" data-ng-if="entry.location!=''" data-ui-sref="readmission" ui-sref-opts="{reload: true, notify: true}" data-ng-click="_menu.collapse(entry.viewOrder)" index="18" data-ng-init="_menu.status[entry.viewOrder]=true" class="ng-scope">
+                <i class="fa fa fa-th fa-fw ng-scope"><div class="icon-bg bg-blue"></div></i><span class="menu-title ng-scope">Readmission Application</span><span class="fa arrow ng-scope"></span>
+            </a><!-- end ngIf: entry.location!='' -->
+            <!-- ngIf: entry.location=='' -->
+            <!-- ngIf: entry.children.length > 0 -->
+        </li><!-- end ngIf: menuEntries.length == 1 --><!-- end ngRepeat: entry in menuEntries[0].items --><!-- ngIf: menuEntries.length == 1 --><li data-ng-repeat="entry in menuEntries[0].items" data-ng-mouseleave="_menu.mouseleave()" data-ng-mouseover="_menu.mouseover(entry.viewOrder)" data-ng-class="entry.title=='Clearance/Improvement' ? '_menu.hover[entry.viewOrder] newFeature': '_menu.hover[entry.viewOrder]'" data-ng-if="menuEntries.length == 1" data-ng-style="env=='d' &amp;&amp; devIndicator" class="ng-scope _menu.hover[entry.viewOrder]">
+            <!-- ngIf: entry.location!='' --><a href="#/studentsRoutine" data-ng-if="entry.location!=''" data-ui-sref="studentsRoutine" ui-sref-opts="{reload: true, notify: true}" data-ng-click="_menu.collapse(entry.viewOrder)" index="19" data-ng-init="_menu.status[entry.viewOrder]=true" class="ng-scope">
+                <i class="fa fa fa-registered fa-fw ng-scope"><div class="icon-bg bg-blue"></div></i><span class="menu-title ng-scope">Class Routine</span><span class="fa arrow ng-scope"></span>
+            </a><!-- end ngIf: entry.location!='' -->
+            <!-- ngIf: entry.location=='' -->
+            <!-- ngIf: entry.children.length > 0 -->
+        </li><!-- end ngIf: menuEntries.length == 1 --><!-- end ngRepeat: entry in menuEntries[0].items --><!-- ngIf: menuEntries.length == 1 --><li data-ng-repeat="entry in menuEntries[0].items" data-ng-mouseleave="_menu.mouseleave()" data-ng-mouseover="_menu.mouseover(entry.viewOrder)" data-ng-class="entry.title=='Clearance/Improvement' ? '_menu.hover[entry.viewOrder] newFeature': '_menu.hover[entry.viewOrder]'" data-ng-if="menuEntries.length == 1" data-ng-style="env=='d' &amp;&amp; devIndicator" class="ng-scope _menu.hover[entry.viewOrder]">
+            <!-- ngIf: entry.location!='' --><a href="#/applicationCarry" data-ng-if="entry.location!=''" data-ui-sref="applicationCarry" ui-sref-opts="{reload: true, notify: true}" data-ng-click="_menu.collapse(entry.viewOrder)" index="24" data-ng-init="_menu.status[entry.viewOrder]=true" class="ng-scope">
+                <i class="fa fa fa-telegram fa-fw ng-scope"><div class="icon-bg bg-blue"></div></i><span class="menu-title ng-scope">Carry Application</span><span class="fa arrow ng-scope"></span>
+            </a><!-- end ngIf: entry.location!='' -->
+            <!-- ngIf: entry.location=='' -->
+            <!-- ngIf: entry.children.length > 0 -->
+        </li><!-- end ngIf: menuEntries.length == 1 --><!-- end ngRepeat: entry in menuEntries[0].items --><!-- ngIf: menuEntries.length == 1 --><li data-ng-repeat="entry in menuEntries[0].items" data-ng-mouseleave="_menu.mouseleave()" data-ng-mouseover="_menu.mouseover(entry.viewOrder)" data-ng-class="entry.title=='Clearance/Improvement' ? '_menu.hover[entry.viewOrder] newFeature': '_menu.hover[entry.viewOrder]'" data-ng-if="menuEntries.length == 1" data-ng-style="env=='d' &amp;&amp; devIndicator" class="ng-scope _menu.hover[entry.viewOrder] newFeature" style="">
+            <!-- ngIf: entry.location!='' --><a href="#/applicationClearanceImprovement" data-ng-if="entry.location!=''" data-ui-sref="applicationClearanceImprovement" ui-sref-opts="{reload: true, notify: true}" data-ng-click="_menu.collapse(entry.viewOrder)" index="24" data-ng-init="_menu.status[entry.viewOrder]=true" class="ng-scope">
+                <i class="fa fa fa-file-word-o fa-fw ng-scope"><div class="icon-bg bg-blue"></div></i><span class="menu-title ng-scope">Clearance/Improvement</span><span class="fa arrow ng-scope"></span>
+            </a><!-- end ngIf: entry.location!='' -->
+            <!-- ngIf: entry.location=='' -->
+            <!-- ngIf: entry.children.length > 0 -->
+        </li><!-- end ngIf: menuEntries.length == 1 --><!-- end ngRepeat: entry in menuEntries[0].items --><!-- ngIf: menuEntries.length == 1 --><li data-ng-repeat="entry in menuEntries[0].items" data-ng-mouseleave="_menu.mouseleave()" data-ng-mouseover="_menu.mouseover(entry.viewOrder)" data-ng-class="entry.title=='Clearance/Improvement' ? '_menu.hover[entry.viewOrder] newFeature': '_menu.hover[entry.viewOrder]'" data-ng-if="menuEntries.length == 1" data-ng-style="env=='d' &amp;&amp; devIndicator" class="ng-scope _menu.hover[entry.viewOrder]">
+            <!-- ngIf: entry.location!='' --><a href="#/optStudentCourseSelection" data-ng-if="entry.location!=''" data-ui-sref="optStudentCourseSelection" ui-sref-opts="{reload: true, notify: true}" data-ng-click="_menu.collapse(entry.viewOrder)" index="28" data-ng-init="_menu.status[entry.viewOrder]=true" class="ng-scope">
+                <i class="fa fa fa-sun-o fa-fw ng-scope"><div class="icon-bg bg-blue"></div></i><span class="menu-title ng-scope">Optional Course</span><span class="fa arrow ng-scope"></span>
+            </a><!-- end ngIf: entry.location!='' -->
+            <!-- ngIf: entry.location=='' -->
+            <!-- ngIf: entry.children.length > 0 -->
+        </li><!-- end ngIf: menuEntries.length == 1 --><!-- end ngRepeat: entry in menuEntries[0].items --><!-- ngIf: menuEntries.length == 1 --><li data-ng-repeat="entry in menuEntries[0].items" data-ng-mouseleave="_menu.mouseleave()" data-ng-mouseover="_menu.mouseover(entry.viewOrder)" data-ng-class="entry.title=='Clearance/Improvement' ? '_menu.hover[entry.viewOrder] newFeature': '_menu.hover[entry.viewOrder]'" data-ng-if="menuEntries.length == 1" data-ng-style="env=='d' &amp;&amp; devIndicator" class="ng-scope _menu.hover[entry.viewOrder]">
+            <!-- ngIf: entry.location!='' --><a href="#/viewSeatPlan" data-ng-if="entry.location!=''" data-ui-sref="viewSeatPlan" ui-sref-opts="{reload: true, notify: true}" data-ng-click="_menu.collapse(entry.viewOrder)" index="51" data-ng-init="_menu.status[entry.viewOrder]=true" class="ng-scope">
+                <i class="fa fa fa-yelp fa-fw ng-scope"><div class="icon-bg bg-blue"></div></i><span class="menu-title ng-scope">Exam Seat Plan</span><span class="fa arrow ng-scope"></span>
+            </a><!-- end ngIf: entry.location!='' -->
+            <!-- ngIf: entry.location=='' -->
+            <!-- ngIf: entry.children.length > 0 -->
+        </li><!-- end ngIf: menuEntries.length == 1 --><!-- end ngRepeat: entry in menuEntries[0].items --><!-- ngIf: menuEntries.length == 1 --><li data-ng-repeat="entry in menuEntries[0].items" data-ng-mouseleave="_menu.mouseleave()" data-ng-mouseover="_menu.mouseover(entry.viewOrder)" data-ng-class="entry.title=='Clearance/Improvement' ? '_menu.hover[entry.viewOrder] newFeature': '_menu.hover[entry.viewOrder]'" data-ng-if="menuEntries.length == 1" data-ng-style="env=='d' &amp;&amp; devIndicator" class="ng-scope _menu.hover[entry.viewOrder]">
+            <!-- ngIf: entry.location!='' --><a href="#/applicationTES" data-ng-if="entry.location!=''" data-ui-sref="applicationTES" ui-sref-opts="{reload: true, notify: true}" data-ng-click="_menu.collapse(entry.viewOrder)" index="100" data-ng-init="_menu.status[entry.viewOrder]=true" class="ng-scope">
+                <i class="fa fa fa-ravelry fa-fw ng-scope"><div class="icon-bg bg-blue"></div></i><span class="menu-title ng-scope">Teacher Evaluation</span><span class="fa arrow ng-scope"></span>
+            </a><!-- end ngIf: entry.location!='' -->
+            <!-- ngIf: entry.location=='' -->
+            <!-- ngIf: entry.children.length > 0 -->
+        </li><!-- end ngIf: menuEntries.length == 1 --><!-- end ngRepeat: entry in menuEntries[0].items --><!-- ngIf: menuEntries.length == 1 --><li data-ng-repeat="entry in menuEntries[0].items" data-ng-mouseleave="_menu.mouseleave()" data-ng-mouseover="_menu.mouseover(entry.viewOrder)" data-ng-class="entry.title=='Clearance/Improvement' ? '_menu.hover[entry.viewOrder] newFeature': '_menu.hover[entry.viewOrder]'" data-ng-if="menuEntries.length == 1" data-ng-style="env=='d' &amp;&amp; devIndicator" class="ng-scope _menu.hover[entry.viewOrder]">
+            <!-- ngIf: entry.location!='' --><a href="#/certificateFee" data-ng-if="entry.location!=''" data-ui-sref="certificateFee" ui-sref-opts="{reload: true, notify: true}" data-ng-click="_menu.collapse(entry.viewOrder)" index="102" data-ng-init="_menu.status[entry.viewOrder]=true" class="ng-scope">
+                <i class="fa fa-id-card-o fa-fw ng-scope"><div class="icon-bg bg-blue"></div></i><span class="menu-title ng-scope">Certificate</span><span class="fa arrow ng-scope"></span>
+            </a><!-- end ngIf: entry.location!='' -->
+            <!-- ngIf: entry.location=='' -->
+            <!-- ngIf: entry.children.length > 0 -->
+        </li><!-- end ngIf: menuEntries.length == 1 --><!-- end ngRepeat: entry in menuEntries[0].items --><!-- ngIf: menuEntries.length == 1 --><li data-ng-repeat="entry in menuEntries[0].items" data-ng-mouseleave="_menu.mouseleave()" data-ng-mouseover="_menu.mouseover(entry.viewOrder)" data-ng-class="entry.title=='Clearance/Improvement' ? '_menu.hover[entry.viewOrder] newFeature': '_menu.hover[entry.viewOrder]'" data-ng-if="menuEntries.length == 1" data-ng-style="env=='d' &amp;&amp; devIndicator" class="ng-scope _menu.hover[entry.viewOrder]">
+            <!-- ngIf: entry.location!='' -->
+            <!-- ngIf: entry.location=='' --><a href="javascript:void(0);" data-ng-if="entry.location==''" data-ng-click="_menu.collapse(entry.viewOrder)" index="77765" data-ng-init="_menu.status[entry.viewOrder]=true" class="ng-scope">
+                <i class="fa fa fa-book fa-fw ng-scope"><div class="icon-bg bg-blue"></div></i><span class="menu-title ng-scope">Library</span><span class="fa arrow ng-scope"></span>
+            </a><!-- end ngIf: entry.location=='' -->
+            <!-- ngIf: entry.children.length > 0 --><ul data-ng-if="entry.children.length &gt; 0" class="nav nav-second-level ng-scope collapse" collapse="_menu.status[77765]" index="77765" style="height: 0px;">
+                <!-- ngRepeat: children in entry.children --><li data-ng-repeat="children in entry.children" class="ng-scope">
+                    <a href="#/search" ui-sref="search" ui-sref-opts="{reload: true, notify: true}" ui-sref-active="active" data-ng-click="_menu.collapse(children.viewOrder)" index="5" data-ng-init="_menu.status[children.viewOrder]=true">
+                        <i class="fa fa fa-search ng-scope"></i><span class="submenu-title ng-scope">Search</span>
+                    </a>
+                </li><!-- end ngRepeat: children in entry.children -->
+            </ul><!-- end ngIf: entry.children.length > 0 -->
+        </li><!-- end ngIf: menuEntries.length == 1 --><!-- end ngRepeat: entry in menuEntries[0].items --><!-- ngIf: menuEntries.length == 1 --><li data-ng-repeat="entry in menuEntries[0].items" data-ng-mouseleave="_menu.mouseleave()" data-ng-mouseover="_menu.mouseover(entry.viewOrder)" data-ng-class="entry.title=='Clearance/Improvement' ? '_menu.hover[entry.viewOrder] newFeature': '_menu.hover[entry.viewOrder]'" data-ng-if="menuEntries.length == 1" data-ng-style="env=='d' &amp;&amp; devIndicator" class="ng-scope _menu.hover[entry.viewOrder]">
+            <!-- ngIf: entry.location!='' --><a href="#/faqStd" data-ng-if="entry.location!=''" data-ui-sref="faqStd" ui-sref-opts="{reload: true, notify: true}" data-ng-click="_menu.collapse(entry.viewOrder)" index="999999" data-ng-init="_menu.status[entry.viewOrder]=true" class="ng-scope">
+                <i class="fa fa fa-question-circle fa-fw ng-scope"><div class="icon-bg bg-blue"></div></i><span class="menu-title ng-scope">FAQ</span><span class="fa arrow ng-scope"></span>
+            </a><!-- end ngIf: entry.location!='' -->
+            <!-- ngIf: entry.location=='' -->
+            <!-- ngIf: entry.children.length > 0 -->
+        </li><!-- end ngIf: menuEntries.length == 1 --><!-- end ngRepeat: entry in menuEntries[0].items -->
+        <!-- ngRepeat: roleWiseEntry in menuEntries --><!-- ngIf: menuEntries.length > 1 --><!-- end ngRepeat: roleWiseEntry in menuEntries -->
+    </ul>
+</div>
+</nav>
+        <div id="page-wrapper" ng-class="header.animation" class="animated">
+            <!-- ngInclude: 'templates/states/breadcrumb.html' --><div id="title-breadcrumb-option-demo" ng-include="'templates/states/breadcrumb.html'" class="page-title-breadcrumb ng-scope" data-ng-style="env=='d' &amp;&amp; devIndicator">
+<div class="page-header pull-left ng-scope">
+  <div class="page-title ng-binding">User Home</div>
+</div>
+<ol class="breadcrumb page-breadcrumb pull-right ng-scope">
+  <!-- ngIf: data.navId != null -->
+  <!--
+  <li data-ng-if="data.navId == null"><i class="fa fa-home"></i>&nbsp;<a href="/#/">Home</a>&nbsp;&nbsp;<i class="fa fa-angle-right"></i></li>
+  <li data-ng-if="data.navId == null" ng-repeat="(k,v) in data.breadcrumb" ng-class="{active:$last}">
+    &nbsp;&nbsp;
+    {{v}}
+    &nbsp;&nbsp;<i ng-if="!$last" class="fa fa-angle-right"></i>
+  </li>
+  -->
+</ol>
+<div class="clearfix ng-scope"></div></div>
+            <!-- uiView:  --><div ui-view="" class="page-content ng-scope"><div id="page-user-profile" class="row ng-scope">
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-5 col-md-offset-3">
+                <div class="panel">
+                    <div class="panel-body shadowPanel">
+                        <div class="form-group">
+                            <div class="text-center mbl">
+                                <img class="img-circle ng-isolate-scope" style="border: 5px solid #fff; box-shadow: 0 2px 3px rgba(0,0,0,0.25);" src="data:image/jpeg;base64,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" data-profile-picture="">
+                            </div>
+                        </div>
+                        <div>
+
+                            <table class="table table-striped table-hover">
+                                <tbody>
+                                <!-- ngRepeat: property in userHome --><tr data-ng-repeat="property in userHome" class="ng-scope" style="">
+                                    <td width="30%"><b class="ng-binding">Name</b></td>
+                                    <td data-ng-style="{ 'color': (property.key === 'Lab Clearance Status' &amp;&amp; property.value === 'Outstanding Dues') ? 'red' : (property.key === 'Lab Clearance Status' ? 'green' : 'inherit'),
+                                      'font-weight': (property.key === 'Lab Clearance Status' ? 'bold' : 'normal') }" class="ng-binding" style="color: inherit; font-weight: normal;">
+                                        ARKO SAHA&nbsp;&nbsp;&nbsp;
+                                    <i class="fa fa-external-link ng-hide" data-ng-show="property.key === 'Lab Clearance Status' &amp;&amp; property.value === 'Outstanding Dues'" data-toggle="modal" data-target="#showDetailsModal">
+                                        <span style="color: blue; text-decoration: underline; cursor: pointer;">Details</span>
+                                    </i>
+                                    </td>
+                                </tr><!-- end ngRepeat: property in userHome --><tr data-ng-repeat="property in userHome" class="ng-scope">
+                                    <td width="30%"><b class="ng-binding">StudentId</b></td>
+                                    <td data-ng-style="{ 'color': (property.key === 'Lab Clearance Status' &amp;&amp; property.value === 'Outstanding Dues') ? 'red' : (property.key === 'Lab Clearance Status' ? 'green' : 'inherit'),
+                                      'font-weight': (property.key === 'Lab Clearance Status' ? 'bold' : 'normal') }" class="ng-binding" style="color: inherit; font-weight: normal;">
+                                        20230104011&nbsp;&nbsp;&nbsp;
+                                    <i class="fa fa-external-link ng-hide" data-ng-show="property.key === 'Lab Clearance Status' &amp;&amp; property.value === 'Outstanding Dues'" data-toggle="modal" data-target="#showDetailsModal">
+                                        <span style="color: blue; text-decoration: underline; cursor: pointer;">Details</span>
+                                    </i>
+                                    </td>
+                                </tr><!-- end ngRepeat: property in userHome --><tr data-ng-repeat="property in userHome" class="ng-scope">
+                                    <td width="30%"><b class="ng-binding">Dept./School</b></td>
+                                    <td data-ng-style="{ 'color': (property.key === 'Lab Clearance Status' &amp;&amp; property.value === 'Outstanding Dues') ? 'red' : (property.key === 'Lab Clearance Status' ? 'green' : 'inherit'),
+                                      'font-weight': (property.key === 'Lab Clearance Status' ? 'bold' : 'normal') }" class="ng-binding" style="color: inherit; font-weight: normal;">
+                                        Department of Computer Science and Engineering&nbsp;&nbsp;&nbsp;
+                                    <i class="fa fa-external-link ng-hide" data-ng-show="property.key === 'Lab Clearance Status' &amp;&amp; property.value === 'Outstanding Dues'" data-toggle="modal" data-target="#showDetailsModal">
+                                        <span style="color: blue; text-decoration: underline; cursor: pointer;">Details</span>
+                                    </i>
+                                    </td>
+                                </tr><!-- end ngRepeat: property in userHome --><tr data-ng-repeat="property in userHome" class="ng-scope">
+                                    <td width="30%"><b class="ng-binding">Year/ Semester</b></td>
+                                    <td data-ng-style="{ 'color': (property.key === 'Lab Clearance Status' &amp;&amp; property.value === 'Outstanding Dues') ? 'red' : (property.key === 'Lab Clearance Status' ? 'green' : 'inherit'),
+                                      'font-weight': (property.key === 'Lab Clearance Status' ? 'bold' : 'normal') }" class="ng-binding" style="color: inherit; font-weight: normal;">
+                                        3/1&nbsp;&nbsp;&nbsp;
+                                    <i class="fa fa-external-link ng-hide" data-ng-show="property.key === 'Lab Clearance Status' &amp;&amp; property.value === 'Outstanding Dues'" data-toggle="modal" data-target="#showDetailsModal">
+                                        <span style="color: blue; text-decoration: underline; cursor: pointer;">Details</span>
+                                    </i>
+                                    </td>
+                                </tr><!-- end ngRepeat: property in userHome --><tr data-ng-repeat="property in userHome" class="ng-scope">
+                                    <td width="30%"><b class="ng-binding">Admitted semester</b></td>
+                                    <td data-ng-style="{ 'color': (property.key === 'Lab Clearance Status' &amp;&amp; property.value === 'Outstanding Dues') ? 'red' : (property.key === 'Lab Clearance Status' ? 'green' : 'inherit'),
+                                      'font-weight': (property.key === 'Lab Clearance Status' ? 'bold' : 'normal') }" class="ng-binding" style="color: inherit; font-weight: normal;">
+                                        Spring, 2023&nbsp;&nbsp;&nbsp;
+                                    <i class="fa fa-external-link ng-hide" data-ng-show="property.key === 'Lab Clearance Status' &amp;&amp; property.value === 'Outstanding Dues'" data-toggle="modal" data-target="#showDetailsModal">
+                                        <span style="color: blue; text-decoration: underline; cursor: pointer;">Details</span>
+                                    </i>
+                                    </td>
+                                </tr><!-- end ngRepeat: property in userHome --><tr data-ng-repeat="property in userHome" class="ng-scope">
+                                    <td width="30%"><b class="ng-binding">Current enrollment status</b></td>
+                                    <td data-ng-style="{ 'color': (property.key === 'Lab Clearance Status' &amp;&amp; property.value === 'Outstanding Dues') ? 'red' : (property.key === 'Lab Clearance Status' ? 'green' : 'inherit'),
+                                      'font-weight': (property.key === 'Lab Clearance Status' ? 'bold' : 'normal') }" class="ng-binding" style="color: inherit; font-weight: normal;">
+                                        ACTUAL&nbsp;&nbsp;&nbsp;
+                                    <i class="fa fa-external-link ng-hide" data-ng-show="property.key === 'Lab Clearance Status' &amp;&amp; property.value === 'Outstanding Dues'" data-toggle="modal" data-target="#showDetailsModal">
+                                        <span style="color: blue; text-decoration: underline; cursor: pointer;">Details</span>
+                                    </i>
+                                    </td>
+                                </tr><!-- end ngRepeat: property in userHome --><tr data-ng-repeat="property in userHome" class="ng-scope">
+                                    <td width="30%"><b class="ng-binding">Lab Clearance Status</b></td>
+                                    <td data-ng-style="{ 'color': (property.key === 'Lab Clearance Status' &amp;&amp; property.value === 'Outstanding Dues') ? 'red' : (property.key === 'Lab Clearance Status' ? 'green' : 'inherit'),
+                                      'font-weight': (property.key === 'Lab Clearance Status' ? 'bold' : 'normal') }" class="ng-binding" style="color: rgb(0, 128, 0); font-weight: bold;">
+                                        No Dues Reported up to Fall, 2024&nbsp;&nbsp;&nbsp;
+                                    <i class="fa fa-external-link ng-hide" data-ng-show="property.key === 'Lab Clearance Status' &amp;&amp; property.value === 'Outstanding Dues'" data-toggle="modal" data-target="#showDetailsModal">
+                                        <span style="color: blue; text-decoration: underline; cursor: pointer;">Details</span>
+                                    </i>
+                                    </td>
+                                </tr><!-- end ngRepeat: property in userHome -->
+                                <!--<tr data-ng-repeat="property in userHome">
+                                    <td width="30%"><b>{{property.key}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></td>
+                                    <td> {{ property.key === 'Lab Clearance Status' && property.value === 'Cleared' ? 'CLEARED' :
+                                        (property.key === 'Lab Clearance Status' && property.value === 'Has Due' ? 'HAS DUE' : property.value) }}
+                                        &nbsp;&nbsp;&nbsp;&nbsp;
+                                        <i class="fa fa-external-link" data-ng-if="property.key === 'Lab Clearance Status' && hasDue" data-toggle="modal" data-target="#showDetailsModal">
+                                            <span style="color: blue; text-decoration: underline; cursor: pointer;">Details</span>
+                                        </i>
+                                        <i class="fa fa-info-circle" title="Record will be available after completing at least one semester."  data-ng-if="property.value==='No Record Yet'"></i>
+                                    </td>
+                                </tr>-->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- ngIf: userRole!='student' -->
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<style class="ng-scope">
+    .modal fade{
+        display:none;
+    }
+</style>
+
+
+<!--<div id="noticeModal"  class="modal fade">
+    <div class="modal-dialog modal-lg" data-backdrop="false">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-ng-click="" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title"><b>Notice For All Students</b></h4>
+            </div>
+            <div class="modal-body" style="background-color: #e6fAff">
+                &lt;!&ndash;<p style="font-size:15px;color: black; text-align: center" >If you are diagnosed with covid-19 virus, please click the link below and submit your report using your institutional email id.</p><br>
+                <strong><a href="https://forms.gle/gfintCDvF66r3VeQ7" target="_blank" style="color: red;font-size: 13px" >Click here</a></strong>&ndash;&gt;
+                <p style="font-size:15px;color: black; text-align: center">Fall 2023 Semester Fee (Regular Admission and Readmission) collection will be started from <b>25 April 2024</b>, students can download the semester fee deposit slip or apply for readmission from this date.
+                For details, <strong><a href="https://www.aust.edu/" target="_blank"  style="color: blue;">click here</a></strong>
+                </p>
+
+             &lt;!&ndash;   <div align="center"><p><strong><strong></strong><u>NOTIFICATION</u></strong></u> </p></div>&ndash;&gt;
+                &lt;!&ndash;<div>
+                    <p><strong><u>1.  Payment of Semester Fess for Fall 2019 semester:</u></strong></p>
+                    <p>It is hereby notified for information of all concerned that the Semester Fees for the
+                        Fall-2019 Semester of Degree Programs will be received through Integrated University Management System (IUMS) from the students as per following schedule:
+                    </p>
+                    <p><b>a)  17.02.2020 (Monday) to 10.03.2020 (Tuesday)</b>	       — Without late fee </p>
+                    <p><b>b)  11.03.2020 (Wednesday) to 22.03.2020 (Sunday)</b>       — With late fee of Tk. 100/-</p>
+                    <p><b>c)  24.03.2020 (Tuesday) to 02.04.2020 (Thursday)</b>       — With late fee of Tk. 600/-</p>
+                    <p><b>d)  05.04.2020 (Sunday) to 15.04.2020 (Wednesday)</b>       — With late fee of Tk. 2,000/-</p>
+                    <p><b>e) 16.04.2020 (Thursday) to 27.04.2020 (Monday)</b> — With late fee of Tk. 7,000/-&nbsp; (on special consideration)</p>
+                    <p>
+                        Tk. 1,500/-(Taka one thousand five hundred) only per semester per student as bus fare will have to be deposited at the time of depositing semester fee.
+                    </p>
+                    <p>
+                        The schedule of the payment of the semester fees will be maintained strictly as stated above.
+                    </p>
+                    <p><b>
+                        The students failing to pay the semester fees within stipulated time will not be allowed to attend the semester final examinations and their names & ID will remain suspended for the semester.
+                    </b>
+
+                    </p>
+                </div>&ndash;&gt;
+
+               &lt;!&ndash; <div style="border: 2px solid black;padding: 5px">
+                    NB: Semester fees are not adjustable with the Full Free Tuition Award(FFTA)/Half Free Tuition Award(HFTA), Sibling Benifits, Benifits from Distressed Funds etc.
+                </div>&ndash;&gt;
+
+              &lt;!&ndash;  <div>
+                    </br>
+                    <p><strong><u>2. Re-Admission in Fall 2019 Semester:</u></strong></p>
+                    <p>Students who want to get themselves re-admitted in Fall 2019 semester must apply through IUMS</p>
+                    <p><b>
+                        17.02.2020 (Monday) to 02.03.2020 (Monday). After the stipulated period, no student will be allowed to take readmission in Fall 2019 semester. They will have to wait for the next semester to take re-admission.
+
+                    </b></p>
+
+                </div>&ndash;&gt;
+
+            </div>
+           &lt;!&ndash; <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>&ndash;&gt;
+        </div>&lt;!&ndash; /.modal-content &ndash;&gt;
+    </div>&lt;!&ndash; /.modal-dialog &ndash;&gt;
+</div>&lt;!&ndash; /.modal &ndash;&gt;-->
+
+<div id="extensionModal" class="modal fade ng-scope" style="margin-top: 210px">
+    <div class="modal-dialog modal-lg modal-dialog-centered" data-backdrop="false" style="position: absolute;
+   top: 40px;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   z-index: 10040;
+   overflow: auto;
+   overflow-y: auto;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-ng-click="" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title"><b>Alert</b></h4>
+            </div>
+            <div class="modal-body alert-warning" ng-class="semesterExtensionStatus==2 ? 'alert-danger' : 'alert-warning'">
+                <!-- ngIf: +semesterExtensionStatus==1 -->
+                <!-- ngIf: +semesterExtensionStatus==2 -->
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+
+<!--<div data-ng-if="userRole=='student'">
+
+
+    <h1>{{userRole}}</h1>
+    <script>
+        $("#noticeModal").modal('show');
+
+    </script>
+
+
+</div>-->
+<div class="modal fade ng-scope" id="showDetailsModal" role="dialog">`
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">×</button>
+                <h5 class="modal-title">Lab/Library due information</h5>
+            </div>
+            <div class="modal-body">
+                <h4 style="text-align: left"><b>You have the following due(s): </b></h4>
+                <div style="max-height: 400px; overflow-y: auto;">
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr><th style="background-color: #FAFAFA;text-align:center;" width="5%">SL</th>
+                        <th style="background-color: #FAFAFA;text-align:center;" width="10%">Department/Office</th>
+                        <th style="background-color: #FAFAFA;text-align:center;" width="10%">Room No.</th>
+                        <th style="background-color: #FAFAFA;text-align:center;" width="20%">Course</th>
+                        <th style="background-color: #FAFAFA;text-align:center;" width="30%">Comment</th>
+                        <th style="background-color: #FAFAFA;text-align:center;" width="20%">Reported By</th>
+                        </tr></thead>
+                        <tbody>
+                        <!-- ngRepeat: due in duesTableInfo | orderBy : 'id' -->
+                        </tbody>
+                    </table>
+                </div>
+                <h5 style="text-align: left"> <br><b><span style="color: red; font-weight: bolder">***</span>You are advised to contact the relevant Department/School/Library that issued the outstanding due. </b></h5>
+            </div>
+            <div id="cciButtons" class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script class="ng-scope">
+    console.log("role: "+localStorage.getItem("userDesignation"));
+
+    //if(localStorage.getItem("userDesignation") == "Student") {
+
+        //console.log("before",localStorage);
+
+        //if(localStorage["modalflag1"]==undefined ||
+        //    localStorage["modalflag1"]==0 ||
+         //   localStorage["modalflag1"]==null ||
+        //    localStorage["modalflag1"]==false || localStorage["modalflag1"]=='')
+        //{
+            //$("#noticeModal").modal('show');
+            //localStorage.setItem("modalflag1", "1");
+
+        //}
+    //}
+</script>
+</div>
+            <!--END CONTENT QUICK SIDEBAR-->
+            <!-- ngInclude: 'templates/states/footer.html' --><div id="footer" ng-include="'templates/states/footer.html'" ng-show="header.footer" class="ng-scope"><div class="copyright ng-binding ng-scope"> 2026 © - Ahsanullah University of Science and Technology</div>
+</div>
+        </div>
+
+    </div>
+</div>
+
+<!--Modal Alert-->
+<div id="modal-alert" tabindex="-1" role="dialog" aria-hidden="true" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body" id="alertMessage" style="font-size: 17px;"></div>
+            <div class="modal-footer">
+                <button type="button" data-dismiss="modal" class="btn btn-primary">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Modal Full Width for User Guide Html View-->
+<div id="modal-full-width" tabindex="-1" role="dialog" aria-labelledby="modal-full-width-label" aria-hidden="true" class="modal fade">
+    <div class="modal-dialog modal-full-width" style="padding-left: 9px;height: 84%;">
+        <div class="modal-content" style="height: 99%;">
+            <div class="modal-header" style="padding: 7px 15px;">
+                <button type="button" data-dismiss="modal" aria-hidden="true" class="close" style="opacity: 1;margin-top: 0px;">×
+                </button>
+                <h4 id="modal-full-width-label" class="modal-title" style="font-size: 16px;">User Guide-Html View</h4>
+            </div>
+            <div class="modal-body ng-binding" data-ng-bind-html="data.htmlUserGuide" style="height: calc(100% - 90px);"></div>
+            <div class="modal-footer" style="padding: 7px 15px;">
+                <button type="button" data-dismiss="modal" class="btn btn-default">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Modal Default-->
+<div id="modal-default" tabindex="-1" role="dialog" aria-labelledby="modal-default-label" aria-hidden="true" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" data-dismiss="modal" aria-hidden="true" class="close" style="opacity: 1;margin-top: 0px;">×
+                </button>
+                <h4 id="modal-default-label" class="modal-title">Modal Default</h4></div>
+            <div class="modal-body">Modal body goes here</div>
+            <div class="modal-footer">
+                <button type="button" data-dismiss="modal" class="btn btn-default">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+</body></html>

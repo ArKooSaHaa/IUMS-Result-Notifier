@@ -1,0 +1,28 @@
+# dependencies
+node_modules/
+
+# environment
+.env
+.env.*
+
+# logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# build artifacts
+build/
+dist/
+coverage/
+
+# local tooling
+.DS_Store
+
+# generated outputs
+results.json
+
+# debug artifacts
+debug-screenshots/
